@@ -1,12 +1,9 @@
-import { FaArrowLeft } from "react-icons/fa";
-import { Button } from "../ui/button";
+import Header from "./header";
 
 const KanbanBoard = () => {
   return (
     <div>
-      <Button variant="outline">
-        <FaArrowLeft className="opacity-50" />
-      </Button>
+      <Header />
     </div>
   );
 };
