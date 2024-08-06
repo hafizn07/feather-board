@@ -8,11 +8,11 @@ export interface CardType {
   assignee: string;
   column: string;
   tag: string;
+  color?: string;
 }
 
 export interface ColumnProps {
   title: string;
-  headingColor: string;
   cards: CardType[];
   column: string;
   setCards: Dispatch<SetStateAction<CardType[]>>;
@@ -36,4 +36,3 @@ export interface AddCardProps {
   column: string;
   setCards: Dispatch<SetStateAction<CardType[]>>;
 }
-

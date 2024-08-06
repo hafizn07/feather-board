@@ -32,9 +32,6 @@ const Board = () => {
           key={column}
           title={column.charAt(0).toUpperCase() + column.slice(1)}
           column={column}
-          headingColor={`text-${
-            ["neutral", "yellow", "blue", "emerald"][index % 4]
-          }-200`}
           cards={cards}
           setCards={setCards}
         />

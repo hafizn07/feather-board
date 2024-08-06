@@ -5,6 +5,7 @@ import { IoAddOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
 
 import { CardType, ColumnProps } from "@/types";
+import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,13 +18,7 @@ import DropIndicator from "./DropIndicator";
 import AddCard from "./AddCard";
 import Card from "./Card";
 
-const Column: React.FC<ColumnProps> = ({
-  title,
-  headingColor,
-  cards,
-  column,
-  setCards,
-}) => {
+const Column: React.FC<ColumnProps> = ({ title, cards, column, setCards }) => {
   const [active, setActive] = useState(false);
 
   const handleDragStart = (e: React.DragEvent, card: CardType) => {
@@ -118,13 +113,32 @@ const Column: React.FC<ColumnProps> = ({
     setActive(false);
   };
 
-  const filteredCards = cards.filter((c) => c.column === column);
+  const filteredCards = cards.filter((card) => card.column === column);
+
+  const getColorClass = (color: string) => {
+    switch (color) {
+      case "neutral":
+        return "text-neutral-600";
+      case "yellow":
+        return "text-yellow-600";
+      case "blue":
+        return "text-blue-500";
+      case "emerald":
+        return "text-emerald-500";
+      default:
+        return "text-neutral-500";
+    }
+  };
+
+  const headingColor =
+    filteredCards.length > 0 ? filteredCards[0].color : "neutral";
+  const headingClass = getColorClass(headingColor || "neutral");
 
   return (
     <div className="w-[310px] shrink-0">
       <div className="flex justify-between items-center p-3">
         <div className="flex items-center gap-3">
-          <h3 className={`font-medium ${headingColor}`}>{title}</h3>
+          <h3 className={`font-medium ${headingClass}`}>{title}</h3>
           <span className="rounded text-sm text-neutral-400">
             {filteredCards.length}
           </span>

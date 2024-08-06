@@ -8,6 +8,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "backlog",
+    color: "neutral",
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "R&D",
     column: "backlog",
+    color: "neutral",
   },
   {
     id: "3",
@@ -26,6 +28,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Devops",
     column: "backlog",
+    color: "neutral",
   },
 
   // TODO
@@ -37,6 +40,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "todo",
+    color: "yellow",
   },
   {
     id: "5",
@@ -46,6 +50,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "todo",
+    color: "yellow",
   },
 
   // DOING
@@ -57,6 +62,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "doing",
+    color: "blue",
   },
   {
     id: "7",
@@ -66,6 +72,7 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "doing",
+    color: "blue",
   },
 
   // DONE
@@ -77,5 +84,6 @@ export const DEFAULT_CARDS = [
     assignee: "",
     tag: "Programming",
     column: "done",
+    color: "emerald",
   },
 ];
