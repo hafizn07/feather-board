@@ -1,9 +1,10 @@
 import { FaApple } from "react-icons/fa";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import { FiArrowLeft, FiSearch } from "react-icons/fi";
 import { PiShareBold } from "react-icons/pi";
 import { IoIosSettings } from "react-icons/io";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface HeaderButtonProps {
   icon: React.ComponentType<{ size: number }>;
