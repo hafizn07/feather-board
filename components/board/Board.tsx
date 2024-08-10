@@ -11,7 +11,7 @@ import AddSectionModal from "@/components/modals/AddSectionModal";
 import Column from "./Column";
 
 const Board = () => {
-  const [cards, setCards] = useState<CardType[]>(DEFAULT_CARDS);
+  const [cards, setCards] = useState<CardType[]>([...DEFAULT_CARDS]);
   const [columns, setColumns] = useState<string[]>([
     "backlog",
     "todo",
