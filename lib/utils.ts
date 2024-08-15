@@ -25,3 +25,33 @@ export const dateFormatter = (date: Date) => {
   if (isYesterday(date)) return { text: "Yesterday", color: "text-red-500" };
   return { text: `${day} ${month}`, color: "text-gray-400" };
 };
+
+export const loadState = (key: string) => {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const serializedState = localStorage.getItem(key);
+    if (serializedState === null) {
+      return null;
+    }
+    return JSON.parse(serializedState);
+  } catch (error) {
+    console.error("Error loading state from local storage:", error);
+    return null;
+  }
+};
+
+export const saveState = (key: string, state: any) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error("Error saving state to local storage:", error);
+  }
+};

@@ -35,8 +35,10 @@ const AddSectionModal: React.FC<AddSectionModalProps> = ({
   const [sectionName, setSectionName] = useState("");
 
   const handleSave = () => {
-    onSave(sectionName);
-    setSectionName("");
+    if (sectionName.trim()) {
+      onSave(sectionName);
+      setSectionName("");
+    }
   };
 
   if (!isOpen) return null;
